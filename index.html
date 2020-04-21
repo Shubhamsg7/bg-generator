@@ -3,16 +3,29 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 	<title>Background Generator</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body id="gradient">
+<div class="color">
 	<h1>Background Generator</h1>
-	<input oninput="setGradient()" type="color" class="color1" name="color1" value="#02aab0">
-	<input oninput="setGradient()" type="color" class="color2" name="color2" value="#00cdac">
-	<h2>Current CSS Background</h2>
-	<h3></h3>
+	Choose 1st Color: <input oninput="setGradient()" type="color" class="color1" name="color1" value="#02aab0"><br><br>
+	Choose 2nd Color: <input oninput="setGradient()" type="color" class="color2" name="color2" value="#00cdac">
+	<br><br>	
+	<button class="btn" data-clipboard-target="#code">
+		Copy Color Code
+	</button>
+	<button id="button" class="btn" onclick="generate();">
+		Get New Gradient
+	  </button>
+	  <h3 id="code">linear-gradient(to right, #02aab0, #00cdac);</h3>
+</div>
 <script type="text/javascript" src="script.js"></script>
+<script src="clipboard.min.js"></script>
+    <script>
+        new ClipboardJS('.btn');
+    </script>
 </body>
-	
 </html>
